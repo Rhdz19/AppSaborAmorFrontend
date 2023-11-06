@@ -16,26 +16,26 @@ export class TabsPage {
   async selectAction() {
 
     const actionSheet = await this.actionSheetController.create({
-      header: 'Choose an action',
+      header: 'Menu',
       cssClass: 'custom-action-sheet',
       buttons: [
         {
-          text: 'Add something',
-          icon: 'wallet',
+          text: 'Mi perfil',
+          icon: 'accessibility-outline',
           handler: () => {
             // Put in logic ...
           }
         },
         {
-          text: 'Change something',
-          icon: 'swap-horizontal-outline',
+          text: 'Menu',
+          icon: 'fast-food-outline',
           handler: () => {
             // Put in logic ...
           }
         },
         {
-          text: 'Set something',
-          icon: 'calculator',
+          text: 'Mi carrito',
+          icon: 'cart-outline',
           handler: () => {
             // Put in logic ...
           }
