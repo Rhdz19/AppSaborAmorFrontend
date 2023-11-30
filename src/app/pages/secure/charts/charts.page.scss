@@ -1,3 +1,76 @@
+
+:host {
+  ion-list {
+    background-color: var(--ion-color-primary);
+  }
+}
+ion-icon {
+  color: #b14c4c;
+}ion-label {
+  color: #b14c4c;
+}
+ion-text {
+  color: #b14c4c;
+}
+.transparent-background {
+  --background: transparent;
+}
+
+  /* Agrega estilos personalizados aquí */
+  ion-img {
+    max-width: 170px;
+    height: 150px;
+    display: block;
+    margin: auto;
+    object-fit: cover; 
+    border-radius: 10px; 
+  }
+  .btn-nn{
+    display: flex;
+    object-fit: cover;  
+  }
+  // reserva
+  .mdl{
+    position: relative;
+    top: 200px;
+    left: 200px;
+  }
+  .full-screen-reserva {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('../../../../assets/reserva.png');
+    background-size: cover; 
+  }
+ 
+  
+
+
+  .custom-padding {
+    margin: 20px; /* Puedes ajustar el valor según tus necesidades */
+
+  }
+
+
+  .contenedor-flex {
+    display: flex;
+    align-items: center;
+  }
+  
+  h3 {
+
+    margin-left: 50px; /* Ajusta el margen según tus necesidades */
+  }
+  
+  img {
+    padding: 16px;
+    max-width: 50%; /* La imagen ocupará el 100% del ancho del contenedor */
+  }
+
+
+
 :host {
   body {
     background-color: var(--ion-color-dark);
@@ -6,6 +79,7 @@
   ion-content {
     --background: linear-gradient(135deg, var(--ion-color-dark), var(--ion-color-primary));
   }
+  
 
   ion-list {
     border-radius: 8px;
@@ -21,4 +95,55 @@
   // ion-item {
   //   background-color: var(--ion-color-primary);
   // }
+
 }
+.toolbar-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.center-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.center-image {
+  align-self: center;
+}
+
+.center-text {
+  text-align: center;
+}
+
+.ion-text {
+  color: #b14c4c;
+}
+.bold-text {
+  font-weight: bold;
+}
+
+.bordered-container {
+  border: 1px solid #000; /* Cambia #000 al color que desees para el borde */
+  padding: 6px; /* Ajusta el relleno según tus necesidades */
+  border-radius: 6px; /* Ajusta el radio para redondear las esquinas */
+  border-color: #ca7a8c;
+
+}
+.ion-text-small {
+  font-size: 150%; /* Ajusta el valor según tus necesidades */
+  font-weight: normal; 
+}
+.negro {
+  color: rgb(43, 41, 41); /* o cualquier otro color que desees */
+  font-size: 15px;
+  font-weight: normal; 
+}
+.button-click{
+  background-color: #ca7a8c;
+  border-radius: 6px; /* Ajusta el radio para redondear las esquinas */
+  font-weight: bold;
+}
+
+

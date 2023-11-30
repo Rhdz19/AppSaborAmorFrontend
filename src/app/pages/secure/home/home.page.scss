@@ -31,17 +31,16 @@ ion-text {
   // reserva
   .mdl{
     position: relative;
-    top: 200px;
-    left: 200px;
+;
   }
   .full-screen-reserva {
     position: fixed;
     top: 0;
-    left: 0;
+
     width: 100%;
     height: 100%;
     background-image: url('../../../../assets/reserva.png');
-    background-size: cover; 
+
   }
  
   
@@ -59,14 +58,15 @@ ion-text {
   }
   
   h3 {
-
-    margin-left: 50px; /* Ajusta el margen según tus necesidades */
+    
+    margin-top: 6px;
   }
   
   img {
     padding: 16px;
     max-width: 50%; /* La imagen ocupará el 100% del ancho del contenedor */
   }
+  
 
   .custom-modal {
     --height: 50vh; /* Ajusta el porcentaje de altura según tus necesidades */
@@ -90,3 +90,12 @@ ion-text {
     --height: 50vh; /* Ajusta el porcentaje de altura según tus necesidades */
     transform: translateY(0);
   }
+
+
+
+.con-borde {
+  background-color: rgb(177, 142, 97);
+  margin: 10px;
+ /* Ajusta el color y el grosor del borde según tus preferencias */
+  border-radius: 8px; /* Ajusta el radio para redondear las esquinas según tus preferencias */
+}

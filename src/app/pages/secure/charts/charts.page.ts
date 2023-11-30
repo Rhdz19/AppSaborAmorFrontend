@@ -2,6 +2,8 @@ import { Component, OnInit, ViewChild } from '@angular/core';
 import { ChartConfiguration, ChartData, ChartEvent, ChartOptions, ChartType } from 'chart.js';
 import { BaseChartDirective } from 'ng2-charts';
 import { HelperService } from 'src/app/services/helper/helper.service';
+import { Router } from '@angular/router';
+import { ModalController } from '@ionic/angular';
 
 @Component({
   selector: 'app-charts',
@@ -199,14 +201,16 @@ export class ChartsPage implements OnInit {
   content_loaded: boolean = false;
 
   constructor(
-    private helperService: HelperService
+    private helperService: HelperService, private router: Router
   ) { }
 
   ngOnInit() {
     // Create bar chart
     this.createBarChart();
   }
-
+  redirigirAOtraVista() {
+    this.router.navigate(['/password-reset']);
+  }
   ionViewDidEnter() {
     // Fake timeout
     setTimeout(() => {
@@ -247,4 +251,12 @@ export class ChartsPage implements OnInit {
       }
     ];
   }
+
+  redirigirAVista() {
+    // Reemplaza '/ruta-de-destino' con la ruta real de la vista a la que quieres redirigir
+    this.router.navigate(['/signin']);
+  }
+
+  
+  
 }

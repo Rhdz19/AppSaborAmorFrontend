@@ -20,7 +20,7 @@ export class AuthService {
 
     // Sample only - remove this after real authentication / session
     let session = {
-      email: 'john.doe@mail.com'
+      email: ''
     }
 
     return false;

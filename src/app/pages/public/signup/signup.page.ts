@@ -34,8 +34,8 @@ export class SignupPage implements OnInit {
     });
 
     // DEBUG: Prefill inputs
-    this.signup_form.get('email').setValue('john.doe@mail.com');
-    this.signup_form.get('password').setValue('123456');
+    this.signup_form.get('email').setValue('');
+    this.signup_form.get('password').setValue('');
   }
 
   // Sign up
@@ -45,18 +45,18 @@ export class SignupPage implements OnInit {
 
     // If email or password empty
     if (this.signup_form.value.email == '' || this.signup_form.value.password == '' || this.signup_form.value.password_repeat == '') {
-      this.toastService.presentToast('Error', 'Please fill in all fields', 'top', 'danger', 4000);
+      this.toastService.presentToast('Error', 'Por favor llena todos los campos', 'top', 'danger', 4000);
 
       // If passwords do not match
     } else if (this.signup_form.value.password != this.signup_form.value.password_repeat) {
-      this.toastService.presentToast('Error', 'Passwords must match', 'top', 'danger', 4000);
+      this.toastService.presentToast('Error', 'Las contraseñas deben coincidir', 'top', 'danger', 4000);
 
     } else {
 
       // Proceed with loading overlay
       const loading = await this.loadingController.create({
         cssClass: 'default-loading',
-        message: '<p>Signing up...</p><span>Please be patient.</span>',
+        message: '<p>Registrando...</p><span>Por favor sea paciente.</span>',
         spinner: 'crescent'
       });
       await loading.present();
@@ -65,7 +65,7 @@ export class SignupPage implements OnInit {
       // ...
 
       // Success messages + routing
-      this.toastService.presentToast('Welcome!', 'Lorem ipsum', 'top', 'success', 2000);
+      this.toastService.presentToast('Bienvenido!', '', 'top', 'success', 2000);
       await this.router.navigate(['/home']);
       loading.dismiss();
     }
