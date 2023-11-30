@@ -34,7 +34,7 @@ export class SigninPage implements OnInit {
     });
 
     // DEBUG: Prefill inputs
-    this.signin_form.get('email').setValue('john.doe@mail.com');
+    this.signin_form.get('email').setValue('Ejemplo@mail.com');
     this.signin_form.get('password').setValue('123456');
   }
 
@@ -45,14 +45,14 @@ export class SigninPage implements OnInit {
 
     // If email or password empty
     if (this.signin_form.value.email == '' || this.signin_form.value.password == '') {
-      this.toastService.presentToast('Error', 'Please input email and password', 'top', 'danger', 2000);
+      this.toastService.presentToast('Error', 'Ingresa tu correo y tu contraseña', 'top', 'danger', 2000);
 
     } else {
 
       // Proceed with loading overlay
       const loading = await this.loadingController.create({
         cssClass: 'default-loading',
-        message: '<p>Signing in...</p><span>Please be patient.</span>',
+        message: '<p>Iniciando sesion...</p><span></span>',
         spinner: 'crescent'
       });
       await loading.present();
