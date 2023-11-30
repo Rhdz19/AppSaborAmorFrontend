@@ -43,3 +43,26 @@ ion-text {
     padding: 16px;
     max-width: 50%; /* La imagen ocupará el 100% del ancho del contenedor */
   }
+
+  .custom-modal {
+    --height: 50vh; /* Ajusta el porcentaje de altura según tus necesidades */
+    --width: 100vw; /* Opcional: Ajusta el porcentaje de ancho según tus necesidades */
+    --top: 50%; /* Ajusta la posición vertical en la que quieres que aparezca el modal */
+  
+    position: absolute;
+    top: var(--top);
+    left: 0;
+    width: var(--width);
+    height: var(--height);
+    margin-top: calc(-1 * var(--height) / 2);
+    transform: translateY(100%);
+  }
+  
+  .custom-modal ion-content {
+    height: 100%;
+  }
+  
+  .custom-modal.ion-modal-showing {
+    --height: 50vh; /* Ajusta el porcentaje de altura según tus necesidades */
+    transform: translateY(0);
+  }
