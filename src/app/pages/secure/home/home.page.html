@@ -1,4 +1,4 @@
-<ion-header collapse="fade" [translucent]="true">
+<!-- <ion-header collapse="fade" [translucent]="true">
   <ion-toolbar color="dark">
     <ion-title color="light">
       Bienvenido Usuario
@@ -9,18 +9,775 @@
       </ion-button>
     </ion-buttons>
   </ion-toolbar>
-</ion-header>
+</ion-header> -->
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
+<ion-content [fullscreen]="true" class="custom-padding">
+  <!-- <ion-header collapse="condense">
     <ion-toolbar>
       <ion-title size="large">Home</ion-title>
     </ion-toolbar>
     <ion-toolbar>
       <ion-searchbar showCancelButton="focus" placeholder="Company, category, expense ..."></ion-searchbar>
     </ion-toolbar>
-  </ion-header>
+  </ion-header> -->
 
+  
+  <ion-content>
+
+
+    <ion-header>
+      <ion-toolbar>
+        <ion-segment [(ngModel)]="selectedSegment">
+          <ion-segment-button value="all">
+            <ion-label>Menu</ion-label>
+          </ion-segment-button>
+          <ion-segment-button value="favorites">
+            <ion-label>Reservar</ion-label>
+          </ion-segment-button>
+        </ion-segment>
+      </ion-toolbar>
+    </ion-header>
+
+
+
+    <!-- Show this content when 'All' is selected -->
+    <div *ngIf="selectedSegment === 'all'">
+      <ion-list>
+        <!-- Your 'All' content goes here -->
+        <ion-header>
+          <ion-toolbar>
+            <ion-segment [(ngModel)]="tabsMenu">
+              <ion-segment-button value="Todo">
+                <ion-label>Todo</ion-label>
+              </ion-segment-button>
+              <ion-segment-button value="Dulce">
+                <ion-label>Dulce</ion-label>
+              </ion-segment-button>
+              <ion-segment-button value="Salado">
+                <ion-label>Salado</ion-label>
+              </ion-segment-button>
+              <ion-segment-button value="Bebidas">
+                <ion-label>Bebidas</ion-label>
+              </ion-segment-button>
+            </ion-segment>
+          </ion-toolbar>
+        </ion-header>
+        
+      </ion-list>
+ <!-- Show this content when 'Favorites' is selected -->
+ <div *ngIf="tabsMenu === 'Todo'">
+  <ion-list>
+
+    <!-- Tu contenido de 'Favoritos' va aquí -->
+    <ion-item lines="none">
+      <ion-label class="ion-text-center" color="pink">
+        <ion-icon name="star-outline"></ion-icon>
+        <ion-text color="pink"> Los favoritos </ion-text>
+        <ion-icon name="star-outline"></ion-icon>
+      </ion-label>
+    </ion-item>
+
+    <!-- Primera fila con imagen y texto -->
+    <ion-row class="image-row">
+      <ion-col size="6" class="image-col">
+        <ion-img src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse1.mm.bing.net%2Fth%3Fid%3DOIP.Z8jPnWeY5kmIV7l1khjlOQHaFi%26pid%3DApi&f=1&ipt=80f57496ee01e86b4e5eb8a520a4aab706b60c0a7219fbd4f3013a15d80e6acf&ipo=images"></ion-img>
+        <ion-label class="ion-text-center">
+          <ion-text>
+            <h3>Nutella</h3>
+          </ion-text>
+        
+          <ion-text>
+            <p>$70</p>
+          </ion-text>
+        </ion-label>
+      </ion-col>
+       <!-- Segunda fila con imagen y texto -->
+
+       <ion-col size="6" class="image-col">
+        <ion-img src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse3.mm.bing.net%2Fth%3Fid%3DOIP.W9hC1vvyX3f7--Jc5UX7VwHaEL%26pid%3DApi&f=1&ipt=2f37d40a52ff7f6679eb8c63e0acc56bcb6fb1882d2010bfe70bfda4dae680cf&ipo=images"></ion-img>
+        <ion-label class="ion-text-center">
+          <ion-text>
+            <h3>Jamón y queso de bola</h3>
+          </ion-text>
+        
+          <ion-text>
+            <p>$80</p>
+          </ion-text>
+        </ion-label>
+      </ion-col>
+    </ion-row>
+
+   <br/>
+   <br/>
+
+
+    <div class="contenedor-flex">
+      <h3>Pumpkin Cinnnamon</h3>
+      <img src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse1.explicit.bing.net%2Fth%3Fid%3DOIP.4Fg7KFensg4zw2xcZ4CJswHaFj%26pid%3DApi&f=1&ipt=770169698ef4f2278a2f189de691ede77c5561770f06b719f830065da21b1655&ipo=images" alt="Descripción de la imagen">
+    </div>
+
+    <!-- Tu contenido de '' va aquí -->
+    <ion-item lines="none">
+      <ion-label class="ion-text-center" color="pink">
+        <ion-icon name="ice-cream-outline"></ion-icon>
+        <ion-text color="pink"> Crepas dulces </ion-text>
+        <ion-icon name="ice-cream-outline"></ion-icon>
+      </ion-label>
+    </ion-item>
+
+
+
+    <!-- Primera fila con imagen y texto -->
+    <ion-row class="image-row">
+      <ion-col size="6" class="image-col">
+        <ion-img src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse1.mm.bing.net%2Fth%3Fid%3DOIP.Z8jPnWeY5kmIV7l1khjlOQHaFi%26pid%3DApi&f=1&ipt=80f57496ee01e86b4e5eb8a520a4aab706b60c0a7219fbd4f3013a15d80e6acf&ipo=images"></ion-img>
+        <ion-label class="ion-text-center">
+          <ion-text>
+            <h3>Nutella</h3>
+          </ion-text>
+        
+          <ion-text>
+            <p>$70</p>
+          </ion-text>
+        </ion-label>
+      </ion-col>
+       <!-- Segunda fila con imagen y texto -->
+
+       <ion-col size="6" class="image-col">
+        <ion-img src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse3.mm.bing.net%2Fth%3Fid%3DOIP.W9hC1vvyX3f7--Jc5UX7VwHaEL%26pid%3DApi&f=1&ipt=2f37d40a52ff7f6679eb8c63e0acc56bcb6fb1882d2010bfe70bfda4dae680cf&ipo=images"></ion-img>
+        <ion-label class="ion-text-center">
+          <ion-text>
+            <h3>Jamón y queso de bola</h3>
+          </ion-text>
+        
+          <ion-text>
+            <p>$80</p>
+          </ion-text>
+        </ion-label>
+      </ion-col>
+    </ion-row>
+
+
+    <!-- Primera fila con imagen y texto -->
+    <ion-row class="image-row">
+      <ion-col size="6" class="image-col">
+        <ion-img src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse1.mm.bing.net%2Fth%3Fid%3DOIP.Z8jPnWeY5kmIV7l1khjlOQHaFi%26pid%3DApi&f=1&ipt=80f57496ee01e86b4e5eb8a520a4aab706b60c0a7219fbd4f3013a15d80e6acf&ipo=images"></ion-img>
+        <ion-label class="ion-text-center">
+          <ion-text>
+            <h3>Nutella</h3>
+          </ion-text>
+        
+          <ion-text>
+            <p>$70</p>
+          </ion-text>
+        </ion-label>
+      </ion-col>
+       <!-- Segunda fila con imagen y texto -->
+
+       <ion-col size="6" class="image-col">
+        <ion-img src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse3.mm.bing.net%2Fth%3Fid%3DOIP.W9hC1vvyX3f7--Jc5UX7VwHaEL%26pid%3DApi&f=1&ipt=2f37d40a52ff7f6679eb8c63e0acc56bcb6fb1882d2010bfe70bfda4dae680cf&ipo=images"></ion-img>
+        <ion-label class="ion-text-center">
+          <ion-text>
+            <h3>Jamón y queso de bola</h3>
+          </ion-text>
+        
+          <ion-text>
+            <p>$80</p>
+          </ion-text>
+        </ion-label>
+      </ion-col>
+    </ion-row>
+
+    
+    <!-- Primera fila con imagen y texto -->
+    <ion-row class="image-row">
+      <ion-col size="6" class="image-col">
+        <ion-img src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse1.mm.bing.net%2Fth%3Fid%3DOIP.Z8jPnWeY5kmIV7l1khjlOQHaFi%26pid%3DApi&f=1&ipt=80f57496ee01e86b4e5eb8a520a4aab706b60c0a7219fbd4f3013a15d80e6acf&ipo=images"></ion-img>
+        <ion-label class="ion-text-center">
+          <ion-text>
+            <h3>Nutella</h3>
+          </ion-text>
+        
+          <ion-text>
+            <p>$70</p>
+          </ion-text>
+        </ion-label>
+      </ion-col>
+       <!-- Segunda fila con imagen y texto -->
+
+       <ion-col size="6" class="image-col">
+        <ion-img src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse3.mm.bing.net%2Fth%3Fid%3DOIP.W9hC1vvyX3f7--Jc5UX7VwHaEL%26pid%3DApi&f=1&ipt=2f37d40a52ff7f6679eb8c63e0acc56bcb6fb1882d2010bfe70bfda4dae680cf&ipo=images"></ion-img>
+        <ion-label class="ion-text-center">
+          <ion-text>
+            <h3>Jamón y queso de bola</h3>
+          </ion-text>
+        
+          <ion-text>
+            <p>$80</p>
+          </ion-text>
+        </ion-label>
+      </ion-col>
+    </ion-row>
+
+
+<!-- Saladas -->
+
+  <!-- Tu contenido de '' va aquí -->
+  <ion-item lines="none">
+    <ion-label class="ion-text-center" color="pink">
+      <ion-icon name="pizza-outline"></ion-icon>
+      <ion-text color="pink"> Crepas saladas </ion-text>
+      <ion-icon name="pizza-outline"></ion-icon>
+    </ion-label>
+  </ion-item>
+
+
+
+
+
+
+  <!-- Primera fila con imagen y texto -->
+  <ion-row class="image-row">
+    <ion-col size="6" class="image-col">
+      <ion-img src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse1.mm.bing.net%2Fth%3Fid%3DOIP.Z8jPnWeY5kmIV7l1khjlOQHaFi%26pid%3DApi&f=1&ipt=80f57496ee01e86b4e5eb8a520a4aab706b60c0a7219fbd4f3013a15d80e6acf&ipo=images"></ion-img>
+      <ion-label class="ion-text-center">
+        <ion-text>
+          <h3>Nutella</h3>
+        </ion-text>
+      
+        <ion-text>
+          <p>$70</p>
+        </ion-text>
+      </ion-label>
+    </ion-col>
+     <!-- Segunda fila con imagen y texto -->
+
+     <ion-col size="6" class="image-col">
+      <ion-img src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse3.mm.bing.net%2Fth%3Fid%3DOIP.W9hC1vvyX3f7--Jc5UX7VwHaEL%26pid%3DApi&f=1&ipt=2f37d40a52ff7f6679eb8c63e0acc56bcb6fb1882d2010bfe70bfda4dae680cf&ipo=images"></ion-img>
+      <ion-label class="ion-text-center">
+        <ion-text>
+          <h3>Jamón y queso de bola</h3>
+        </ion-text>
+      
+        <ion-text>
+          <p>$80</p>
+        </ion-text>
+      </ion-label>
+    </ion-col>
+  </ion-row>
+
+  
+  <!-- Primera fila con imagen y texto -->
+  <ion-row class="image-row">
+    <ion-col size="6" class="image-col">
+      <ion-img src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse1.mm.bing.net%2Fth%3Fid%3DOIP.Z8jPnWeY5kmIV7l1khjlOQHaFi%26pid%3DApi&f=1&ipt=80f57496ee01e86b4e5eb8a520a4aab706b60c0a7219fbd4f3013a15d80e6acf&ipo=images"></ion-img>
+      <ion-label class="ion-text-center">
+        <ion-text>
+          <h3>Nutella</h3>
+        </ion-text>
+      
+        <ion-text>
+          <p>$70</p>
+        </ion-text>
+      </ion-label>
+    </ion-col>
+     <!-- Segunda fila con imagen y texto -->
+
+     <ion-col size="6" class="image-col">
+      <ion-img src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse3.mm.bing.net%2Fth%3Fid%3DOIP.W9hC1vvyX3f7--Jc5UX7VwHaEL%26pid%3DApi&f=1&ipt=2f37d40a52ff7f6679eb8c63e0acc56bcb6fb1882d2010bfe70bfda4dae680cf&ipo=images"></ion-img>
+      <ion-label class="ion-text-center">
+        <ion-text>
+          <h3>Jamón y queso de bola</h3>
+        </ion-text>
+      
+        <ion-text>
+          <p>$80</p>
+        </ion-text>
+      </ion-label>
+    </ion-col>
+  </ion-row>
+
+<!-- bebidas -->
+
+  <!-- Tu contenido de '' va aquí -->
+  <ion-item lines="none">
+    <ion-label class="ion-text-center" color="pink">
+      <ion-icon name="beer-outline"></ion-icon>
+      <ion-text color="pink"> Bebidas </ion-text>
+      <ion-icon name="beer-outline"></ion-icon>
+    </ion-label>
+  </ion-item>
+
+
+
+  <!-- Primera fila con imagen y texto -->
+  <ion-row class="image-row">
+    <ion-col size="6" class="image-col">
+      <ion-img src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse1.mm.bing.net%2Fth%3Fid%3DOIP.Z8jPnWeY5kmIV7l1khjlOQHaFi%26pid%3DApi&f=1&ipt=80f57496ee01e86b4e5eb8a520a4aab706b60c0a7219fbd4f3013a15d80e6acf&ipo=images"></ion-img>
+      <ion-label class="ion-text-center">
+        <ion-text>
+          <h3>Nutella</h3>
+        </ion-text>
+      
+        <ion-text>
+          <p>$70</p>
+        </ion-text>
+      </ion-label>
+    </ion-col>
+     <!-- Segunda fila con imagen y texto -->
+
+     <ion-col size="6" class="image-col">
+      <ion-img src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse3.mm.bing.net%2Fth%3Fid%3DOIP.W9hC1vvyX3f7--Jc5UX7VwHaEL%26pid%3DApi&f=1&ipt=2f37d40a52ff7f6679eb8c63e0acc56bcb6fb1882d2010bfe70bfda4dae680cf&ipo=images"></ion-img>
+      <ion-label class="ion-text-center">
+        <ion-text>
+          <h3>Jamón y queso de bola</h3>
+        </ion-text>
+      
+        <ion-text>
+          <p>$80</p>
+        </ion-text>
+      </ion-label>
+    </ion-col>
+  </ion-row>
+
+
+  <!-- Primera fila con imagen y texto -->
+  <ion-row class="image-row">
+    <ion-col size="6" class="image-col">
+      <ion-img src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse1.mm.bing.net%2Fth%3Fid%3DOIP.Z8jPnWeY5kmIV7l1khjlOQHaFi%26pid%3DApi&f=1&ipt=80f57496ee01e86b4e5eb8a520a4aab706b60c0a7219fbd4f3013a15d80e6acf&ipo=images"></ion-img>
+      <ion-label class="ion-text-center">
+        <ion-text>
+          <h3>Nutella</h3>
+        </ion-text>
+      
+        <ion-text>
+          <p>$70</p>
+        </ion-text>
+      </ion-label>
+    </ion-col>
+     <!-- Segunda fila con imagen y texto -->
+
+     <ion-col size="6" class="image-col">
+      <ion-img src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse3.mm.bing.net%2Fth%3Fid%3DOIP.W9hC1vvyX3f7--Jc5UX7VwHaEL%26pid%3DApi&f=1&ipt=2f37d40a52ff7f6679eb8c63e0acc56bcb6fb1882d2010bfe70bfda4dae680cf&ipo=images"></ion-img>
+      <ion-label class="ion-text-center">
+        <ion-text>
+          <h3>Jamón y queso de bola</h3>
+        </ion-text>
+      
+        <ion-text>
+          <p>$80</p>
+        </ion-text>
+      </ion-label>
+    </ion-col>
+  </ion-row>
+
+  
+  <!-- Primera fila con imagen y texto -->
+  <ion-row class="image-row">
+    <ion-col size="6" class="image-col">
+      <ion-img src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse1.mm.bing.net%2Fth%3Fid%3DOIP.Z8jPnWeY5kmIV7l1khjlOQHaFi%26pid%3DApi&f=1&ipt=80f57496ee01e86b4e5eb8a520a4aab706b60c0a7219fbd4f3013a15d80e6acf&ipo=images"></ion-img>
+      <ion-label class="ion-text-center">
+        <ion-text>
+          <h3>Nutella</h3>
+        </ion-text>
+      
+        <ion-text>
+          <p>$70</p>
+        </ion-text>
+      </ion-label>
+    </ion-col>
+     <!-- Segunda fila con imagen y texto -->
+
+     <ion-col size="6" class="image-col">
+      <ion-img src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse3.mm.bing.net%2Fth%3Fid%3DOIP.W9hC1vvyX3f7--Jc5UX7VwHaEL%26pid%3DApi&f=1&ipt=2f37d40a52ff7f6679eb8c63e0acc56bcb6fb1882d2010bfe70bfda4dae680cf&ipo=images"></ion-img>
+      <ion-label class="ion-text-center">
+        <ion-text>
+          <h3>Jamón y queso de bola</h3>
+        </ion-text>
+      
+        <ion-text>
+          <p>$80</p>
+        </ion-text>
+      </ion-label>
+    </ion-col>
+  </ion-row>
+
+  <!-- Primera fila con imagen y texto -->
+  <ion-row class="image-row">
+    <ion-col size="6" class="image-col">
+      <ion-img src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse1.mm.bing.net%2Fth%3Fid%3DOIP.Z8jPnWeY5kmIV7l1khjlOQHaFi%26pid%3DApi&f=1&ipt=80f57496ee01e86b4e5eb8a520a4aab706b60c0a7219fbd4f3013a15d80e6acf&ipo=images"></ion-img>
+      <ion-label class="ion-text-center">
+        <ion-text>
+          <h3>Nutella</h3>
+        </ion-text>
+      
+        <ion-text>
+          <p>$70</p>
+        </ion-text>
+      </ion-label>
+    </ion-col>
+     <!-- Segunda fila con imagen y texto -->
+
+     <ion-col size="6" class="image-col">
+      <ion-img src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse3.mm.bing.net%2Fth%3Fid%3DOIP.W9hC1vvyX3f7--Jc5UX7VwHaEL%26pid%3DApi&f=1&ipt=2f37d40a52ff7f6679eb8c63e0acc56bcb6fb1882d2010bfe70bfda4dae680cf&ipo=images"></ion-img>
+      <ion-label class="ion-text-center">
+        <ion-text>
+          <h3>Jamón y queso de bola</h3>
+        </ion-text>
+      
+        <ion-text>
+          <p>$80</p>
+        </ion-text>
+      </ion-label>
+    </ion-col>
+  </ion-row>
+
+  </ion-list>
+</div>
+
+
+
+ <!-- Show this content when 'Favorites' is selected -->
+ <div *ngIf="tabsMenu === 'Dulce'">
+  <ion-list>
+
+   
+
+
+    <div class="contenedor-flex">
+      <h3>Pumpkin Cinnnamon</h3>
+      <img src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse1.explicit.bing.net%2Fth%3Fid%3DOIP.4Fg7KFensg4zw2xcZ4CJswHaFj%26pid%3DApi&f=1&ipt=770169698ef4f2278a2f189de691ede77c5561770f06b719f830065da21b1655&ipo=images" alt="Descripción de la imagen">
+    </div>
+
+    <!-- Tu contenido de '' va aquí -->
+    <ion-item lines="none">
+      <ion-label class="ion-text-center" color="pink">
+        <ion-icon name="ice-cream-outline"></ion-icon>
+        <ion-text color="pink"> Crepas dulces </ion-text>
+        <ion-icon name="ice-cream-outline"></ion-icon>
+      </ion-label>
+    </ion-item>
+
+
+
+    <!-- Primera fila con imagen y texto -->
+    <ion-row class="image-row">
+      <ion-col size="6" class="image-col">
+        <ion-img src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse1.mm.bing.net%2Fth%3Fid%3DOIP.Z8jPnWeY5kmIV7l1khjlOQHaFi%26pid%3DApi&f=1&ipt=80f57496ee01e86b4e5eb8a520a4aab706b60c0a7219fbd4f3013a15d80e6acf&ipo=images"></ion-img>
+        <ion-label class="ion-text-center">
+          <ion-text>
+            <h3>Nutella</h3>
+          </ion-text>
+        
+          <ion-text>
+            <p>$70</p>
+          </ion-text>
+        </ion-label>
+      </ion-col>
+       <!-- Segunda fila con imagen y texto -->
+
+       <ion-col size="6" class="image-col">
+        <ion-img src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse3.mm.bing.net%2Fth%3Fid%3DOIP.W9hC1vvyX3f7--Jc5UX7VwHaEL%26pid%3DApi&f=1&ipt=2f37d40a52ff7f6679eb8c63e0acc56bcb6fb1882d2010bfe70bfda4dae680cf&ipo=images"></ion-img>
+        <ion-label class="ion-text-center">
+          <ion-text>
+            <h3>Jamón y queso de bola</h3>
+          </ion-text>
+        
+          <ion-text>
+            <p>$80</p>
+          </ion-text>
+        </ion-label>
+      </ion-col>
+    </ion-row>
+
+
+    <!-- Primera fila con imagen y texto -->
+    <ion-row class="image-row">
+      <ion-col size="6" class="image-col">
+        <ion-img src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse1.mm.bing.net%2Fth%3Fid%3DOIP.Z8jPnWeY5kmIV7l1khjlOQHaFi%26pid%3DApi&f=1&ipt=80f57496ee01e86b4e5eb8a520a4aab706b60c0a7219fbd4f3013a15d80e6acf&ipo=images"></ion-img>
+        <ion-label class="ion-text-center">
+          <ion-text>
+            <h3>Nutella</h3>
+          </ion-text>
+        
+          <ion-text>
+            <p>$70</p>
+          </ion-text>
+        </ion-label>
+      </ion-col>
+       <!-- Segunda fila con imagen y texto -->
+
+       <ion-col size="6" class="image-col">
+        <ion-img src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse3.mm.bing.net%2Fth%3Fid%3DOIP.W9hC1vvyX3f7--Jc5UX7VwHaEL%26pid%3DApi&f=1&ipt=2f37d40a52ff7f6679eb8c63e0acc56bcb6fb1882d2010bfe70bfda4dae680cf&ipo=images"></ion-img>
+        <ion-label class="ion-text-center">
+          <ion-text>
+            <h3>Jamón y queso de bola</h3>
+          </ion-text>
+        
+          <ion-text>
+            <p>$80</p>
+          </ion-text>
+        </ion-label>
+      </ion-col>
+    </ion-row>
+
+    
+    <!-- Primera fila con imagen y texto -->
+    <ion-row class="image-row">
+      <ion-col size="6" class="image-col">
+        <ion-img src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse1.mm.bing.net%2Fth%3Fid%3DOIP.Z8jPnWeY5kmIV7l1khjlOQHaFi%26pid%3DApi&f=1&ipt=80f57496ee01e86b4e5eb8a520a4aab706b60c0a7219fbd4f3013a15d80e6acf&ipo=images"></ion-img>
+        <ion-label class="ion-text-center">
+          <ion-text>
+            <h3>Nutella</h3>
+          </ion-text>
+        
+          <ion-text>
+            <p>$70</p>
+          </ion-text>
+        </ion-label>
+      </ion-col>
+       <!-- Segunda fila con imagen y texto -->
+
+       <ion-col size="6" class="image-col">
+        <ion-img src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse3.mm.bing.net%2Fth%3Fid%3DOIP.W9hC1vvyX3f7--Jc5UX7VwHaEL%26pid%3DApi&f=1&ipt=2f37d40a52ff7f6679eb8c63e0acc56bcb6fb1882d2010bfe70bfda4dae680cf&ipo=images"></ion-img>
+        <ion-label class="ion-text-center">
+          <ion-text>
+            <h3>Jamón y queso de bola</h3>
+          </ion-text>
+        
+          <ion-text>
+            <p>$80</p>
+          </ion-text>
+        </ion-label>
+      </ion-col>
+    </ion-row>
+
+
+
+  </ion-list>
+</div>
+
+ <!-- Show this content when 'Favorites' is selected -->
+ <div *ngIf="tabsMenu === 'Salado'">
+  <ion-list>
+     <!-- Tu contenido de 'Favoritos' va aquí -->
+     <ion-item lines="none">
+      <ion-label class="ion-text-center" color="pink">
+        <ion-icon name="pizza-outline"></ion-icon>
+        <ion-text color="pink"> Crepas saladas </ion-text>
+        <ion-icon name="pizza-outline"></ion-icon>
+      </ion-label>
+    </ion-item>
+
+    <!-- Primera fila con imagen y texto -->
+    <ion-row class="image-row">
+      <ion-col size="6" class="image-col">
+        <ion-img src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse1.mm.bing.net%2Fth%3Fid%3DOIP.Z8jPnWeY5kmIV7l1khjlOQHaFi%26pid%3DApi&f=1&ipt=80f57496ee01e86b4e5eb8a520a4aab706b60c0a7219fbd4f3013a15d80e6acf&ipo=images"></ion-img>
+        <ion-label class="ion-text-center">
+          <ion-text>
+            <h3>Nutella</h3>
+          </ion-text>
+        
+          <ion-text>
+            <p>$70</p>
+          </ion-text>
+        </ion-label>
+      </ion-col>
+       <!-- Segunda fila con imagen y texto -->
+
+       <ion-col size="6" class="image-col">
+        <ion-img src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse3.mm.bing.net%2Fth%3Fid%3DOIP.W9hC1vvyX3f7--Jc5UX7VwHaEL%26pid%3DApi&f=1&ipt=2f37d40a52ff7f6679eb8c63e0acc56bcb6fb1882d2010bfe70bfda4dae680cf&ipo=images"></ion-img>
+        <ion-label class="ion-text-center">
+          <ion-text>
+            <h3>Jamón y queso de bola</h3>
+          </ion-text>
+        
+          <ion-text>
+            <p>$80</p>
+          </ion-text>
+        </ion-label>
+      </ion-col>
+    </ion-row>
+      <!-- Primera fila con imagen y texto -->
+      <ion-row class="image-row">
+        <ion-col size="6" class="image-col">
+          <ion-img src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse1.mm.bing.net%2Fth%3Fid%3DOIP.Z8jPnWeY5kmIV7l1khjlOQHaFi%26pid%3DApi&f=1&ipt=80f57496ee01e86b4e5eb8a520a4aab706b60c0a7219fbd4f3013a15d80e6acf&ipo=images"></ion-img>
+          <ion-label class="ion-text-center">
+            <ion-text>
+              <h3>Nutella</h3>
+            </ion-text>
+          
+            <ion-text>
+              <p>$70</p>
+            </ion-text>
+          </ion-label>
+        </ion-col>
+         <!-- Segunda fila con imagen y texto -->
+  
+         <ion-col size="6" class="image-col">
+          <ion-img src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse3.mm.bing.net%2Fth%3Fid%3DOIP.W9hC1vvyX3f7--Jc5UX7VwHaEL%26pid%3DApi&f=1&ipt=2f37d40a52ff7f6679eb8c63e0acc56bcb6fb1882d2010bfe70bfda4dae680cf&ipo=images"></ion-img>
+          <ion-label class="ion-text-center">
+            <ion-text>
+              <h3>Jamón y queso de bola</h3>
+            </ion-text>
+          
+            <ion-text>
+              <p>$80</p>
+            </ion-text>
+          </ion-label>
+        </ion-col>
+      </ion-row>
+        <!-- Primera fila con imagen y texto -->
+    <ion-row class="image-row">
+      <ion-col size="6" class="image-col">
+        <ion-img src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse1.mm.bing.net%2Fth%3Fid%3DOIP.Z8jPnWeY5kmIV7l1khjlOQHaFi%26pid%3DApi&f=1&ipt=80f57496ee01e86b4e5eb8a520a4aab706b60c0a7219fbd4f3013a15d80e6acf&ipo=images"></ion-img>
+        <ion-label class="ion-text-center">
+          <ion-text>
+            <h3>Nutella</h3>
+          </ion-text>
+        
+          <ion-text>
+            <p>$70</p>
+          </ion-text>
+        </ion-label>
+      </ion-col>
+       <!-- Segunda fila con imagen y texto -->
+
+       <ion-col size="6" class="image-col">
+        <ion-img src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse3.mm.bing.net%2Fth%3Fid%3DOIP.W9hC1vvyX3f7--Jc5UX7VwHaEL%26pid%3DApi&f=1&ipt=2f37d40a52ff7f6679eb8c63e0acc56bcb6fb1882d2010bfe70bfda4dae680cf&ipo=images"></ion-img>
+        <ion-label class="ion-text-center">
+          <ion-text>
+            <h3>Jamón y queso de bola</h3>
+          </ion-text>
+        
+          <ion-text>
+            <p>$80</p>
+          </ion-text>
+        </ion-label>
+      </ion-col>
+    </ion-row>
+  </ion-list>
+</div>
+
+ <!-- Show this content when 'Favorites' is selected -->
+ <div *ngIf="tabsMenu === 'Bebidas'">
+  <ion-list>
+    <!-- Your 'Favorites' content goes here -->
+      <!-- Tu contenido de 'Favoritos' va aquí -->
+      <ion-item lines="none">
+        <ion-label class="ion-text-center" color="pink">
+          <ion-icon name="beer-outline"></ion-icon>
+          <ion-text color="pink"> Bebidas </ion-text>
+          <ion-icon name="beer-outline"></ion-icon>
+        </ion-label>
+      </ion-item>
+  
+      <!-- Primera fila con imagen y texto -->
+      <ion-row class="image-row">
+        <ion-col size="6" class="image-col">
+          <ion-img src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse1.mm.bing.net%2Fth%3Fid%3DOIP.Z8jPnWeY5kmIV7l1khjlOQHaFi%26pid%3DApi&f=1&ipt=80f57496ee01e86b4e5eb8a520a4aab706b60c0a7219fbd4f3013a15d80e6acf&ipo=images"></ion-img>
+          <ion-label class="ion-text-center">
+            <ion-text>
+              <h3>Nutella</h3>
+            </ion-text>
+          
+            <ion-text>
+              <p>$70</p>
+            </ion-text>
+          </ion-label>
+        </ion-col>
+         <!-- Segunda fila con imagen y texto -->
+  
+         <ion-col size="6" class="image-col">
+          <ion-img src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse3.mm.bing.net%2Fth%3Fid%3DOIP.W9hC1vvyX3f7--Jc5UX7VwHaEL%26pid%3DApi&f=1&ipt=2f37d40a52ff7f6679eb8c63e0acc56bcb6fb1882d2010bfe70bfda4dae680cf&ipo=images"></ion-img>
+          <ion-label class="ion-text-center">
+            <ion-text>
+              <h3>Jamón y queso de bola</h3>
+            </ion-text>
+          
+            <ion-text>
+              <p>$80</p>
+            </ion-text>
+          </ion-label>
+        </ion-col>
+      </ion-row>
+        <!-- Primera fila con imagen y texto -->
+        <ion-row class="image-row">
+          <ion-col size="6" class="image-col">
+            <ion-img src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse1.mm.bing.net%2Fth%3Fid%3DOIP.Z8jPnWeY5kmIV7l1khjlOQHaFi%26pid%3DApi&f=1&ipt=80f57496ee01e86b4e5eb8a520a4aab706b60c0a7219fbd4f3013a15d80e6acf&ipo=images"></ion-img>
+            <ion-label class="ion-text-center">
+              <ion-text>
+                <h3>Nutella</h3>
+              </ion-text>
+            
+              <ion-text>
+                <p>$70</p>
+              </ion-text>
+            </ion-label>
+          </ion-col>
+           <!-- Segunda fila con imagen y texto -->
+    
+           <ion-col size="6" class="image-col">
+            <ion-img src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse3.mm.bing.net%2Fth%3Fid%3DOIP.W9hC1vvyX3f7--Jc5UX7VwHaEL%26pid%3DApi&f=1&ipt=2f37d40a52ff7f6679eb8c63e0acc56bcb6fb1882d2010bfe70bfda4dae680cf&ipo=images"></ion-img>
+            <ion-label class="ion-text-center">
+              <ion-text>
+                <h3>Jamón y queso de bola</h3>
+              </ion-text>
+            
+              <ion-text>
+                <p>$80</p>
+              </ion-text>
+            </ion-label>
+          </ion-col>
+        </ion-row>
+          <!-- Primera fila con imagen y texto -->
+      <ion-row class="image-row">
+        <ion-col size="6" class="image-col">
+          <ion-img src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse1.mm.bing.net%2Fth%3Fid%3DOIP.Z8jPnWeY5kmIV7l1khjlOQHaFi%26pid%3DApi&f=1&ipt=80f57496ee01e86b4e5eb8a520a4aab706b60c0a7219fbd4f3013a15d80e6acf&ipo=images"></ion-img>
+          <ion-label class="ion-text-center">
+            <ion-text>
+              <h3>Nutella</h3>
+            </ion-text>
+          
+            <ion-text>
+              <p>$70</p>
+            </ion-text>
+          </ion-label>
+        </ion-col>
+         <!-- Segunda fila con imagen y texto -->
+  
+         <ion-col size="6" class="image-col">
+          <ion-img src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse3.mm.bing.net%2Fth%3Fid%3DOIP.W9hC1vvyX3f7--Jc5UX7VwHaEL%26pid%3DApi&f=1&ipt=2f37d40a52ff7f6679eb8c63e0acc56bcb6fb1882d2010bfe70bfda4dae680cf&ipo=images"></ion-img>
+          <ion-label class="ion-text-center">
+            <ion-text>
+              <h3>Jamón y queso de bola</h3>
+            </ion-text>
+          
+            <ion-text>
+              <p>$80</p>
+            </ion-text>
+          </ion-label>
+        </ion-col>
+      </ion-row>
+  </ion-list>
+</div>
+
+
+
+
+    </div>
+  
+    <!-- Show this content when 'Favorites' is selected -->
+    <div *ngIf="selectedSegment === 'favorites'">
+      <ion-list>
+        <!-- Your 'Favorites' content goes here -->
+        <ion-item>
+          <ion-label>Favorites Content Goes Here</ion-label>
+        </ion-item>
+      </ion-list>
+    </div>
+  </ion-content>
+  
   <div class="ion-padding">
 
     <ion-list-header>
@@ -28,7 +785,7 @@
     </ion-list-header>
 
     <!-- Skeletons -->
-    <!-- <ion-list class="item-card-list animate__animated animate__fadeIn" *ngIf="!content_loaded">
+    <ion-list class="item-card-list animate__animated animate__fadeIn" *ngIf="!content_loaded">
       <ion-item lines="none" color="primary" *ngFor="let i of [].constructor(3);">
         <ion-avatar slot="start">
           <ion-skeleton-text animated></ion-skeleton-text>
@@ -38,8 +795,8 @@
           <p><ion-skeleton-text animated style="width: 30%"></ion-skeleton-text></p>
         </ion-label>
       </ion-item>
-    </ion-list> -->
-<!-- 
+    </ion-list>
+
     <ion-list class="item-card-list animate__animated animate__fadeIn" *ngIf="content_loaded" lines="none">
       <ion-item color="primary" button detail>
         <ion-label color="medium">
@@ -61,7 +818,7 @@
           <p>PayPal</p>
         </ion-label>
       </ion-item>
-    </ion-list> -->
+    </ion-list>
 
     <hr>
 

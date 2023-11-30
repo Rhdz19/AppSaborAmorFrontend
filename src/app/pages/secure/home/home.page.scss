@@ -3,3 +3,43 @@
     background-color: var(--ion-color-primary);
   }
 }
+ion-icon {
+  color: #b14c4c;
+}ion-label {
+  color: #b14c4c;
+}
+ion-text {
+  color: #b14c4c;
+}
+.transparent-background {
+  --background: transparent;
+}
+
+  /* Agrega estilos personalizados aquí */
+  ion-img {
+    max-width: 150px;
+    height: 200px;
+    display: block;
+    margin: auto;
+  }
+
+  .custom-padding {
+    margin: 20px; /* Puedes ajustar el valor según tus necesidades */
+
+  }
+
+
+  .contenedor-flex {
+    display: flex;
+    align-items: center;
+  }
+  
+  h3 {
+
+    margin-left: 50px; /* Ajusta el margen según tus necesidades */
+  }
+  
+  img {
+    padding: 16px;
+    max-width: 50%; /* La imagen ocupará el 100% del ancho del contenedor */
+  }
