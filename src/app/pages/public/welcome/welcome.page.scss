@@ -2,11 +2,11 @@
 @import 'swiper/css/bundle';
 
 app-welcome {
-  background-color: var(--ion-color-dark);
+  background-color: var(--ion-color-white);
 }
 
 app-welcome ion-content {
-  --background: linear-gradient(135deg, var(--ion-color-dark), var(--ion-color-primary));
+  --background: linear-gradient(135deg, var(--ion-color-white), var(--ion-color-primary));
 }
 
 app-welcome .swiper-welcome {
@@ -64,5 +64,5 @@ app-welcome .swiper-pagination-bullet-active {
 }
 
 app-welcome ion-footer {
-  background: linear-gradient(135deg, var(--ion-color-dark), var(--ion-color-primary));
+  background: linear-gradient(135deg, var(--ion-color-white), var(--ion-color-primary));
 }

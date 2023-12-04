@@ -37,7 +37,7 @@ body {
 }
 
 ion-content {
-  // --background: linear-gradient(135deg, var(--ion-color-dark), var(--ion-color-primary));
+  // --background: linear-gradient(135deg, var(--ion-color-white), var(--ion-color-primary));
 background-color: #fff;
 }
 
@@ -61,7 +61,7 @@ ion-action-sheet {
     }
 
     .action-sheet-group {
-      background: var(--ion-color-dark);
+      background: var(--ion-color-white);
     }
 
     .action-sheet-title {
@@ -87,7 +87,7 @@ ion-action-sheet {
 /* Searchbar */
 ion-searchbar.sc-ion-searchbar-ios-h {
   --cancel-button-color: var(--ion-color-medium);
-  --background: var(--ion-color-dark-tint);
+  --background: var(--ion-color-white-tint);
   --border-radius: 8px;
 }
 

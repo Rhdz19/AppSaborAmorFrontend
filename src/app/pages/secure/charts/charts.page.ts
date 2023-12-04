@@ -54,7 +54,7 @@ export class ChartsPage implements OnInit {
         display: false,
       },
       tooltip: {
-        backgroundColor: this.helperService.getColorVariable('dark'),
+        backgroundColor: this.helperService.getColorVariable('white'),
         bodyColor: this.helperService.getColorVariable('medium'),
         titleColor: this.helperService.getColorVariable('tertiary'),
         titleFont: {
@@ -138,7 +138,7 @@ export class ChartsPage implements OnInit {
         display: false,
       },
       tooltip: {
-        backgroundColor: this.helperService.getColorVariable('dark'),
+        backgroundColor: this.helperService.getColorVariable('white'),
         bodyColor: this.helperService.getColorVariable('medium'),
         titleColor: this.helperService.getColorVariable('tertiary'),
         titleFont: {

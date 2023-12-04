@@ -26,8 +26,8 @@ export class AppComponent {
       // If we're on a mobile platform (iOS / Android), not web
       if (Capacitor.getPlatform() !== 'web') {
 
-        // Set StatusBar style (dark / light)
-        // await StatusBar.setStyle({ style: Style.Dark });
+        // Set StatusBar style (white / light)
+        // await StatusBar.setStyle({ style: Style.white });
       }
 
       // ...
