@@ -33,17 +33,18 @@
 
 
 body {
-  background-color: var(--ion-color-dark);
+  background-color: #fff;
 }
 
 ion-content {
-  --background: linear-gradient(135deg, var(--ion-color-dark), var(--ion-color-primary));
+  // --background: linear-gradient(135deg, var(--ion-color-dark), var(--ion-color-primary));
+background-color: #fff;
 }
 
 ion-list {
   border-radius: 8px;
   margin-bottom: 8px;
-  background-color: var(--ion-color-primary);
+  background-color: #fff;
 }
 
 ion-label {
@@ -117,10 +118,11 @@ ion-searchbar.sc-ion-searchbar-ios-h {
 
 // HR
 hr {
-  background: var(--ion-color-primary);
+  background: white;
   margin: 22px 0;
 
   &.hr-medium {
     margin: 32px 0;
   }
 }
+

@@ -1,19 +1,21 @@
 import { Component, OnInit } from '@angular/core';
 import { IonRouterOutlet, ModalController } from '@ionic/angular';
 import { FilterPage } from './filter/filter.page';
-
+import { Router } from '@angular/router';
 @Component({
   selector: 'app-payments',
   templateUrl: './payments.page.html',
   styleUrls: ['./payments.page.scss'],
 })
 export class PaymentsPage implements OnInit {
+  cartItems: any[] = []; // Array para almacenar los elementos del carrito
 
   content_loaded: boolean = false;
 
   constructor(
     private routerOutlet: IonRouterOutlet,
     private modalController: ModalController,
+    private router: Router
   ) { }
 
   ngOnInit() {
@@ -50,5 +52,49 @@ export class PaymentsPage implements OnInit {
       }, 2000);
     }
   }
+  ionViewWillEnter() {
+    // Recuperar el carrito del localStorage
+    this.loadCart();
+  }
 
+  removeFromCart(index: number) {
+    // Eliminar el producto del carrito en localStorage
+    const storedCart = JSON.parse(localStorage.getItem('cart')) || [];
+    storedCart.splice(index, 1);
+    localStorage.setItem('cart', JSON.stringify(storedCart));
+
+    // Recargar el carrito en la vista
+    this.loadCart();
+  }
+
+  private loadCart() {
+    const storedCart = JSON.parse(localStorage.getItem('cart')) || [];
+    this.cartItems = storedCart;
+
+    
+
+  }
+  decreaseQuantity(item) {
+    console.log("dec")
+    if (item.quantity > 1) {
+      item.quantity--;
+    }
+
+    this.loadCart()
+  }
+
+  increaseQuantity(item) {
+    console.log("sum")
+    item.quantity++;
+    this.loadCart()
+
+  }
+
+  getTotalPrice(item) {
+    return item.quantity * item.price;
+  }
+
+  redirigirAPay() {
+    this.router.navigate(['payments/pay']);
+  }
 }

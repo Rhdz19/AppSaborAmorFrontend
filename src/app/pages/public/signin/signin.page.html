@@ -28,20 +28,20 @@
 
     <!-- Login form -->
     <form class="form-default" [formGroup]="signin_form" (submit)="signIn()">
-      <ion-item color="dark" class="animate__animated animate__fadeInUp">
+      <ion-item color="white" class="animate__animated animate__fadeInUp">
         <ion-label position="floating">
           <ion-icon name="mail" item-start></ion-icon>
           Correo electronico
         </ion-label>
-        <ion-input color="secondary" type="email" formControlName="email"></ion-input>
+        <ion-input color="secondary" type="email" placeholder="Ingresa tu correo electronico" formControlName="email"></ion-input>
       </ion-item>
 
-      <ion-item color="dark" class="animate__animated animate__fadeInUp">
+      <ion-item color="white" class="animate__animated animate__fadeInUp">
         <ion-label position="floating">
           <ion-icon name="lock-closed-outline"></ion-icon>
           Contraseña
         </ion-label>
-        <ion-input color="secondary" formControlName="password" type="password" placeholder="Ingresa tu contraseña"></ion-input>
+        <ion-input color="white" formControlName="password" type="password" placeholder="Ingresa tu contraseña"></ion-input>
       </ion-item>
 
       <ion-button class="ion-margin-top" type="submit" expand="block" size="large" color="secondary">

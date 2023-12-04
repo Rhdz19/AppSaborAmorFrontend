@@ -1,90 +1,161 @@
-<ion-header collapse="fade" [translucent]="true">
-  <ion-toolbar color="dark">
-    <ion-buttons slot="start">
-      <ion-back-button color="secondary" text="Payments" defaultHref="/payments"></ion-back-button>
+<ion-header>
+  <ion-toolbar>
+    <ion-title class="logo-carrito">Check out</ion-title>
+    <ion-buttons slot="start" color="#000">
+      <ion-back-button
+        style="--color: #000"
+        text="Volver"
+        defaultHref="/payments"
+      ></ion-back-button>
     </ion-buttons>
-    <ion-title>
-      Details
-    </ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
+<ion-content [fullscreen]="true" class="ion-padding">
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title class="ion-text-small">Envío</ion-card-title>
+      <br />
 
-  <div class="ion-padding">
+      <ion-segment [(ngModel)]="selectedOption" value="envio">
+        <ion-segment-button value="envio">
+          <ion-card-subtitle>Envio</ion-card-subtitle>
+        </ion-segment-button>
+        <ion-segment-button value="recoger">
+          <ion-card-subtitle>Recoger</ion-card-subtitle>
+        </ion-segment-button>
+      </ion-segment>
 
-    <ion-list-header class="ion-list-header-small">
-      <ion-label>
-        <ion-text color="tertiary">Information</ion-text>
-      </ion-label>
-    </ion-list-header>
+      <!-- Contenido para la opción "Envio" -->
+      <div *ngIf="selectedOption === 'envio'">
+        <!-- Contenido específico para Envio -->
+        <ion-card-content>
+          <!-- Agrega aquí el contenido específico para la opción de envío -->
+          <ion-list>
+            <ion-item>
+              <ion-select
+                placeholder="Selecciona una dirección"
+                class="select-black"
+                cancelText="Cancelar"
+                okText="Aceptar"
+              >
+                <ion-select-option value="casa">Casa</ion-select-option>
+                <ion-select-option value="trabajo">Trabajo</ion-select-option>
+                <ion-select-option value="casaCarmen"
+                  >Casa Tía Carmen</ion-select-option
+                >
+              </ion-select>
+            </ion-item>
+          </ion-list>
+        </ion-card-content>
+      </div>
 
-    <ion-list class="list-custom" lines="full">
-      <ion-item color="primary">
-        <ion-label>
-          <p>Amount</p>
-        </ion-label>
-        <ion-badge color="danger" mode="ios" slot="end">- $8.60</ion-badge>
-      </ion-item>
-      <ion-item color="primary">
-        <ion-label>
-          <p>Status</p>
-        </ion-label>
-        <ion-input readonly slot="end" class="font-size-small ion-text-right ion-no-padding-end" value="Completed"></ion-input>
-      </ion-item>
-      <ion-item color="primary">
-        <ion-label>
-          <p>Date</p>
-        </ion-label>
-        <ion-input readonly slot="end" class="font-size-small ion-text-right ion-no-padding-end" value="01 June, 2022 / 09:21"></ion-input>
-      </ion-item>
-      <ion-item color="primary">
-        <ion-label>
-          <p>Merchant</p>
-        </ion-label>
-        <ion-input readonly slot="end" class="font-size-small ion-text-right ion-no-padding-end" value="Starbucks New York"></ion-input>
-      </ion-item>
-      <ion-item color="primary">
-        <ion-label>
-          <p>Transaction-ID</p>
-        </ion-label>
-        <ion-input readonly slot="end" class="font-size-small ion-text-right ion-no-padding-end" value="848-14E-11V"></ion-input>
-      </ion-item>
-    </ion-list>
+      <!-- Contenido para la opción "Recoger" -->
+      <div *ngIf="selectedOption === 'recoger'" class="recoger-content">
+        <!-- Contenido específico para Recoger -->
+        <!-- <ion-card-content>
 
-    <hr class="hr-medium">
+            <ion-text >Tu pedido cuenta con un tiempo de espera de: 20 minutos</ion-text>
+          </ion-card-content> -->
+      </div>
+    </ion-card-header>
+  </ion-card>
 
-    <ion-list-header class="ion-list-header-small">
-      <ion-label>
-        <ion-text color="tertiary">Actions</ion-text>
-      </ion-label>
-    </ion-list-header>
 
-    <ion-list class="list-custom" lines="full">
-      <ion-item color="primary" detail="false">
-        <ion-avatar slot="start" class="ion-avatar-default-icon">
-          <ion-icon color="tertiary" name="receipt"></ion-icon>
-        </ion-avatar>
-        <ion-label>
-          <h3>Receipt</h3>
-          <p class="font-size-smallest">View digital invoice</p>
-        </ion-label>
-        <ion-button color="secondary" slot="end">
-          View
-        </ion-button>
-      </ion-item>
+  <!-- card metodo pago -->
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title class="ion-text-small">Método de pago</ion-card-title>
+      <br />
 
-      <ion-item color="primary" button>
-        <ion-avatar slot="start" class="ion-avatar-default-icon">
-          <ion-icon color="tertiary" name="chatbox"></ion-icon>
-        </ion-avatar>
-        <ion-label>
-          <h3>Contact merchant</h3>
-          <p class="font-size-smallest">Get in touch with merchant</p>
-        </ion-label>
-      </ion-item>
-    </ion-list>
+      <ion-segment [(ngModel)]="paymentMethod" value="payment">
+        <ion-segment-button value="tarjeta">
+          <ion-card-subtitle>Tarjeta</ion-card-subtitle>
+        </ion-segment-button>
+        <ion-segment-button value="efectivo">
+          <ion-card-subtitle>Efectivo</ion-card-subtitle>
+        </ion-segment-button>
+      </ion-segment>
 
-  </div>
+      <!-- Contenido para la opción "Envio" -->
+      <div *ngIf="paymentMethod === 'tarjeta'">
+        <!-- Contenido específico para Envio -->
+        <ion-card-content>
+          <!-- Agrega aquí el contenido específico para la opción de envío -->
+          <form [formGroup]="paymentForm" (ngSubmit)="onSubmit()">
+            <ion-item>
+              <ion-label position="floating">Numero de tarjeta</ion-label>
+              <ion-input formControlName="cardNumber" type="number"></ion-input>
+            </ion-item>
+        
+            <ion-item>
+              <ion-label position="floating">Titular de la tarjeta</ion-label>
+              <ion-input formControlName="cardHolder" type="text"></ion-input>
+            </ion-item>
+        
+            <ion-item>
+              <ion-label position="floating">Fecha de expiracion (MM/AA)</ion-label>
+              <ion-input formControlName="expirationDate" type="text"></ion-input>
+            </ion-item>
+        
+            <ion-item>
+              <ion-label position="floating">CVV</ion-label>
+              <ion-input formControlName="cvv" type="number"></ion-input>
+            </ion-item>
+        
+            <ion-button expand="full" type="submit" [disabled]="!paymentForm.valid">Aceptar</ion-button>
+          </form>
+          
+          
+        </ion-card-content>
+      </div>
 
+      <!-- Contenido para la opción "Recoger" -->
+      <div *ngIf="paymentMethod === 'efectivo'" class="recoger-content">
+        <!-- Contenido específico para Recoger -->
+        <!-- <ion-card-content>
+
+            <ion-text >Tu pedido cuenta con un tiempo de espera de: 20 minutos</ion-text>
+          </ion-card-content> -->
+      </div>
+    </ion-card-header>
+  </ion-card>
+
+
+
+
+
+  <ion-card>
+    <ion-card-header>
+
+      <ion-grid>
+        <ion-row>
+          <ion-col>Descuento</ion-col>
+          <ion-col size="8"></ion-col>
+          <ion-col class="ion-text-end">$0</ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col>Subtotal</ion-col>
+          <ion-col size="8"></ion-col>
+          <ion-col class="ion-text-end">$0</ion-col>
+        </ion-row>
+
+        <ion-row>
+          <ion-col>Envio</ion-col>
+          <ion-col size="8"></ion-col>
+          <ion-col class="ion-text-end">${{ paymentMethod === 'efectivo' ? '0' : '25' }}</ion-col>
+        </ion-row>
+
+        <ion-row>
+          <ion-col>Total</ion-col>
+          <ion-col size="8"></ion-col>
+          
+          <ion-col class="ion-text-end">$0</ion-col>
+        </ion-row>
+      </ion-grid>
+      
+
+
+    </ion-card-header>
+  </ion-card>
 </ion-content>

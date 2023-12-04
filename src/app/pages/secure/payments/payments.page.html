@@ -1,30 +1,34 @@
-<!-- <ion-header collapse="fade" [translucent]="true">
-  <ion-toolbar color="dark">
-    <ion-title color="light">
-      Carrito de compra
-    </ion-title>
-    <ion-buttons slot="primary">
-      <ion-button color="secondary" (click)="filter()">
-        <ion-icon slot="icon-only" name="filter"></ion-icon>
-      </ion-button>
-    </ion-buttons>
-  </ion-toolbar>
-</ion-header> -->
+
 
 <ion-content [fullscreen]="true">
-  <!-- <ion-header>
-    <ion-toolbar class="toolbar-search">
-      <ion-searchbar color="dark" showCancelButton="focus" placeholder="Company, category, expense ..."></ion-searchbar>
+
+  <ion-header>
+    <ion-toolbar>
+      <ion-title class="logo-carrito">Tu Carrito</ion-title>
+      <ion-buttons slot="end">
+      </ion-buttons>
     </ion-toolbar>
   </ion-header>
 
-  <div class="ion-padding">
 
 
 
-  </div> -->
+
+<!-- TARJETAS BONITAS -->
+<ng-container *ngIf="cartItems.length > 0; else emptyCartMessage">
+<ion-card *ngFor="let item of cartItems; let i = index">
+  <ion-card-header style="display: grid; grid-template-columns: auto 1fr;">
+    <ion-img class="img-card"
+    src="https://annaspasteleria.com/images/2019post/_videoCover/IMG_7029editweb.jpg" style="width: 110px; height: 110px; object-fit: cover; border-radius: 20px;"></ion-img>
+    <div style="padding: 10px; text-align: center;">
+      <ion-card-title style="font-size:larger; color: #b14c4c; margin-bottom: 6px;">{{ item.productName }}</ion-card-title>
+      <ion-card-subtitle class="pb-2" style="margin-bottom: 5px; font-size:large"> ${{ item.price }}</ion-card-subtitle>
+      <br/>
+      <p id="open-modal_directions" (click)="removeFromCart(i)" class="negro bordered-container button-click" style="margin: 0;">Eliminar Producto</p>
+    </div>
 
 
+<<<<<<< Updated upstream
       <ion-header>
         <ion-toolbar>
           <ion-title class="logo-carrito">Tu Carrito</ion-title>
@@ -99,6 +103,45 @@
           </span> $155
         </ion-button>
       </ion-content>
+=======
+    
+  </ion-card-header>
+  
+  <ion-card-content>
+    <div style="display: flex; justify-content: space-between; align-items: center;">
+      <!-- Botón contador -->
+      <div style="width: 40%; border: 1px solid #b64b89; border-radius: 5px; padding: 5px; display: flex; align-items: center; justify-content: center; ">
+        <!-- <div style="cursor: pointer; padding-right: 30px; color: #b64b89;">-</div> -->
+        <div style=" color: #b64b89;">{{ item.quantity }}</div>
+        <!-- <div style="cursor: pointer; color: #b64b89;">+</div> -->
+      </div>
+      <!-- Texto $85 -->
+      <div style="width: 45%; border: 1px solid #ccc; border-radius: 5px; padding: 5px; display: flex; align-items: center; justify-content: center; ">
+        <div style="align-items: center; text-align: center; padding: 0 5px;">${{ item.quantity * item.price }}</div>
+      </div>
+    </div>
+  </ion-card-content>
+</ion-card>
+>>>>>>> Stashed changes
 
 
+
+<ion-button (click)="redirigirAPay()" style="color: #817c7c; display: flex; align-items: center; justify-content: center;">
+  <!-- <ion-icon slot="start" name="star"></ion-icon> -->
+  <span style="text-align: center;color: #410d0d; font-family:'Lucida Sans', 'Lucida Sans Regular'; padding-right: 8px;">
+    Confirmar
+  </span> 
+</ion-button>
+
+</ng-container>
+<ng-template #emptyCartMessage>
+  <div style="text-align: center; padding: 20px;">
+    <p style="color: aliceblue;">Tu carrito está vacío.</p>
+  </div>
+</ng-template>
 </ion-content>
+
+
+
+
+

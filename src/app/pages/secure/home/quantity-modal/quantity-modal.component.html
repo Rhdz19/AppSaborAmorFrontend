@@ -1,0 +1,17 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Quantity Modal</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <p>Product: {{ productName }}</p>
+  <p>Price: ${{ price }}</p>
+
+  <ion-button (click)="decreaseQuantity()">-</ion-button>
+  <span>{{ quantity }}</span>
+  <ion-button (click)="increaseQuantity()">+</ion-button>
+
+  <ion-button (click)="addToCart()">Add to Cart</ion-button>
+  <ion-button (click)="closeModal()">Close</ion-button>
+</ion-content>
