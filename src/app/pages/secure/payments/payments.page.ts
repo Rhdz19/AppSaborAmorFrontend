@@ -11,6 +11,7 @@ export class PaymentsPage implements OnInit {
   cartItems: any[] = []; // Array para almacenar los elementos del carrito
 
   content_loaded: boolean = false;
+  totalSum: number = 0;
 
   constructor(
     private routerOutlet: IonRouterOutlet,
@@ -95,6 +96,19 @@ export class PaymentsPage implements OnInit {
   }
 
   redirigirAPay() {
-    this.router.navigate(['payments/pay']);
+    
+    const finalSumProducts = document.querySelectorAll('.finalSumProduct');
+
+    // Sumar los valores y guardarlos en totalSum
+    this.totalSum = 0;
+    finalSumProducts.forEach((element) => {
+      const value = parseFloat(element.textContent.trim().replace('$', ''));
+      this.totalSum += value;
+    });
+
+    // Hacer lo que necesitas con totalSum
+    console.log('Total sum:', this.totalSum);
+    this.router.navigate(['payments/pay'], { queryParams: { totalSum: this.totalSum } });
+  
   }
 }

@@ -1,17 +1,31 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>Quantity Modal</ion-title>
+    <ion-title>Agregar producto</ion-title>
+    <ion-button (click)="closeModal()" style="--background: transparent;" slot="end">
+      <ion-icon name="close" style="color: rgb(0, 0, 0);"></ion-icon>
+    </ion-button>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
-  <p>Product: {{ productName }}</p>
-  <p>Price: ${{ price }}</p>
+  <ion-card>
 
-  <ion-button (click)="decreaseQuantity()">-</ion-button>
-  <span>{{ quantity }}</span>
-  <ion-button (click)="increaseQuantity()">+</ion-button>
 
-  <ion-button (click)="addToCart()">Add to Cart</ion-button>
-  <ion-button (click)="closeModal()">Close</ion-button>
+    <ion-card-header style="text-align: center">
+      <ion-card-title style="margin-top: 0; padding-top: 0;">{{ productName }}</ion-card-title>
+      <ion-card-title style="font-size: 1.5rem; margin-bottom: 0;">${{ price }}</ion-card-title>
+    </ion-card-header>
+  
+    <ion-card-content style="text-align: center">
+      <div style="text-align: center">
+        <div style=" padding: 10px">
+          <ion-button style="color: antiquewhite;" (click)="decreaseQuantity()">-</ion-button>
+          <ion-button style="color: antiquewhite">{{ quantity }}</ion-button>
+          <ion-button style="color: antiquewhite" (click)="increaseQuantity()">+</ion-button>
+        </div>
+        <ion-button style="color: antiquewhite" (click)="addToCart()">Agregar al carrito</ion-button>
+      </div>
+    </ion-card-content>
+  </ion-card>
+  
 </ion-content>

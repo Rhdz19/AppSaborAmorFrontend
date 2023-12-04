@@ -4,7 +4,7 @@
 
   <ion-header>
     <ion-toolbar>
-      <ion-title class="logo-carrito">Tu Carrito</ion-title>
+      <ion-title class="logo-carrito">Carrito de compras</ion-title>
       <ion-buttons slot="end">
       </ion-buttons>
     </ion-toolbar>
@@ -28,82 +28,6 @@
     </div>
 
 
-<<<<<<< Updated upstream
-      <ion-header>
-        <ion-toolbar>
-          <ion-title class="logo-carrito">Tu Carrito</ion-title>
-          <ion-buttons slot="end">
-            <!-- <ion-button color="white" (click)="modal.dismiss()">Cerrar</ion-button> -->
-          </ion-buttons>
-        </ion-toolbar>
-      </ion-header>
-      <ion-content>
-        <ion-card>
-          <ion-card-header style="display: grid; grid-template-columns: auto 1fr;">
-            <ion-img class="img-card"
-            src="https://annaspasteleria.com/images/2019post/_videoCover/IMG_7029editweb.jpg" style="width: 110px; height: 110px; object-fit: cover; border-radius: 20px;"></ion-img>
-            <div style="padding: 10px;">
-              <ion-card-title style="font-size:larger; color: #b14c4c;">Nutella & Fresas</ion-card-title>
-              <ion-card-subtitle class="pb-2">$85</ion-card-subtitle>
-              <ion-card-subtitle style="text-transform: none;">Esta crepa contiene Nutella original, fresas y se decora con chocolate líquido.
-              </ion-card-subtitle>
-            </div>
-          </ion-card-header>
-          
-          <ion-card-content>
-            <div style="display: flex; justify-content: space-between; align-items: center;">
-              <!-- Botón contador -->
-              <div style="width: 45%; border: 1px solid #b64b89; border-radius: 5px; padding: 5px; display: flex; align-items: center; justify-content: center; ">
-                <div style="cursor: pointer; padding-right: 30px; color: #b64b89;">-</div>
-                <div style="padding: 0 5px; padding-right: 30px; color: #b64b89;">1</div>
-                <div style="cursor: pointer; color: #b64b89;">+</div>
-              </div>
-              <!-- Texto $85 -->
-              <div style="width: 45%; border: 1px solid #ccc; border-radius: 5px; padding: 5px; display: flex; align-items: center; justify-content: center; ">
-                <div style="align-items: center; text-align: center; padding: 0 5px;">$85</div>
-              </div>
-            </div>
-          </ion-card-content>
-        </ion-card>
-        
-        
-<!-- Segunda card -->
-        <ion-card>
-          <ion-card-header style="display: grid; grid-template-columns: auto 1fr;">
-            <ion-img class="img-card"
-            src="https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcQgNJNC8Z3KtEtKJnBGt8BzWCsVCZ5_Cw8zbNT9-jSbaW3YLyYf" style="width: 110px; height: 110px; object-fit: cover; border-radius: 20px;"></ion-img>
-            <div style="padding: 10px;">
-              <ion-card-title style="font-size:larger; color: #b14c4c;">Frapuccino </ion-card-title>
-              <ion-card-subtitle class="pb-2">$70</ion-card-subtitle>
-              <ion-card-subtitle style="text-transform: none;"> Esta bebida contiene leche de vaca, café organico, se decora con crema batida y jarabes.
-              </ion-card-subtitle>
-            </div>
-          </ion-card-header>
-          
-          <ion-card-content>
-            <div style="display: flex; justify-content: space-between; align-items: center;">
-              <!-- Botón contador -->
-              <div style="width: 45%; border: 1px solid #b64b89; border-radius: 5px; padding: 5px; display: flex; align-items: center; justify-content: center; ">
-                <div style="cursor: pointer; padding-right: 30px; color: #b64b89;">-</div>
-                <div style="padding: 0 5px; padding-right: 30px; color: #b64b89;">1</div>
-                <div style="cursor: pointer; color: #b64b89;">+</div>
-              </div>
-              <!-- Texto $70 -->
-              <div style="width: 45%; border: 1px solid #ccc; border-radius: 5px; padding: 5px; display: flex; align-items: center; justify-content: center; ">
-                <div style="align-items: center; text-align: center; padding: 0 5px;">$70</div>
-              </div>
-            </div>
-          </ion-card-content>
-        </ion-card>
-
-        <ion-button style="justify-content: center; color: #817c7c;">
-          <!-- <ion-icon slot="start" name="star"></ion-icon> -->
-          <span style="color: #410d0d; font-family:'Lucida Sans', 'Lucida Sans Regular'; padding-right: 8px;">
-            Confirmar
-          </span> $155
-        </ion-button>
-      </ion-content>
-=======
     
   </ion-card-header>
   
@@ -117,16 +41,15 @@
       </div>
       <!-- Texto $85 -->
       <div style="width: 45%; border: 1px solid #ccc; border-radius: 5px; padding: 5px; display: flex; align-items: center; justify-content: center; ">
-        <div style="align-items: center; text-align: center; padding: 0 5px;">${{ item.quantity * item.price }}</div>
+        <div class="finalSumProduct" style="align-items: center; text-align: center; padding: 0 5px;">${{ item.quantity * item.price }}</div>
       </div>
     </div>
   </ion-card-content>
 </ion-card>
->>>>>>> Stashed changes
 
 
 
-<ion-button (click)="redirigirAPay()" style="color: #817c7c; display: flex; align-items: center; justify-content: center;">
+<ion-button class="ion-padding" (click)="redirigirAPay()" style="color: #817c7c; display: flex; align-items: center; justify-content: center;">
   <!-- <ion-icon slot="start" name="star"></ion-icon> -->
   <span style="text-align: center;color: #410d0d; font-family:'Lucida Sans', 'Lucida Sans Regular'; padding-right: 8px;">
     Confirmar
@@ -136,7 +59,11 @@
 </ng-container>
 <ng-template #emptyCartMessage>
   <div style="text-align: center; padding: 20px;">
-    <p style="color: aliceblue;">Tu carrito está vacío.</p>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    <ion-title style="color: rgb(0, 0, 0);">Tu carrito está vacío.</ion-title>
   </div>
 </ng-template>
 </ion-content>

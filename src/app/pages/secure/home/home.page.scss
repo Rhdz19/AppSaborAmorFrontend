@@ -23,6 +23,7 @@ ion-text {
     margin: auto;
     object-fit: cover; 
     border-radius: 10px; 
+    background-color: transparent;
   }
   .btn-nn{
     display: flex;
@@ -81,7 +82,7 @@ padding: 30px;
     margin-top: calc(-1 * var(--height) / 2);
     transform: translateY(100%);
   }
-  
+
   .custom-modal ion-content {
     height: 100%;
   }
@@ -99,3 +100,10 @@ padding: 30px;
  /* Ajusta el color y el grosor del borde según tus preferencias */
   border-radius: 8px; /* Ajusta el radio para redondear las esquinas según tus preferencias */
 }
+
+ion-segment-button {
+  &.selected {
+    background-color: #e0e0e0;  // Cambia esto al color que desees
+  }
+}
+

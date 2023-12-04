@@ -86,25 +86,36 @@
             <ion-item>
               <ion-label position="floating">Numero de tarjeta</ion-label>
               <ion-input formControlName="cardNumber" type="number"></ion-input>
+              <div *ngIf="paymentForm.get('cardNumber').invalid && (paymentForm.get('cardNumber').dirty || paymentForm.get('cardNumber').touched)">
+                <ion-text color="danger">Este campo es obligatorio y debe contener 16 dígitos.</ion-text>
+              </div>
             </ion-item>
-        
+          
             <ion-item>
               <ion-label position="floating">Titular de la tarjeta</ion-label>
               <ion-input formControlName="cardHolder" type="text"></ion-input>
+              <div *ngIf="paymentForm.get('cardHolder').invalid && (paymentForm.get('cardHolder').dirty || paymentForm.get('cardHolder').touched)">
+                <ion-text color="danger">Este campo es obligatorio.</ion-text>
+              </div>
             </ion-item>
-        
+          
             <ion-item>
               <ion-label position="floating">Fecha de expiracion (MM/AA)</ion-label>
               <ion-input formControlName="expirationDate" type="text"></ion-input>
+              <div *ngIf="paymentForm.get('expirationDate').invalid && (paymentForm.get('expirationDate').dirty || paymentForm.get('expirationDate').touched)">
+                <ion-text color="danger">Este campo es obligatorio y debe contener una fecha válida (MM/AA).</ion-text>
+              </div>
             </ion-item>
-        
+          
             <ion-item>
               <ion-label position="floating">CVV</ion-label>
               <ion-input formControlName="cvv" type="number"></ion-input>
+              <div *ngIf="paymentForm.get('cvv').invalid && (paymentForm.get('cvv').dirty || paymentForm.get('cvv').touched)">
+                <ion-text color="danger">Este campo es obligatorio y debe contener 3 dígitos.</ion-text>
+              </div>
             </ion-item>
-        
-            <ion-button expand="full" type="submit" [disabled]="!paymentForm.valid">Aceptar</ion-button>
           </form>
+          
           
           
         </ion-card-content>
@@ -131,31 +142,37 @@
       <ion-grid>
         <ion-row>
           <ion-col>Descuento</ion-col>
-          <ion-col size="8"></ion-col>
+          <ion-col size="7"></ion-col>
           <ion-col class="ion-text-end">$0</ion-col>
         </ion-row>
         <ion-row>
           <ion-col>Subtotal</ion-col>
-          <ion-col size="8"></ion-col>
-          <ion-col class="ion-text-end">$0</ion-col>
+          <ion-col size="7"></ion-col>
+          <ion-col class="ion-text-end">${{totalSum}}</ion-col>
         </ion-row>
 
         <ion-row>
           <ion-col>Envio</ion-col>
-          <ion-col size="8"></ion-col>
+          <ion-col size="7"></ion-col>
           <ion-col class="ion-text-end">${{ paymentMethod === 'efectivo' ? '0' : '25' }}</ion-col>
         </ion-row>
 
         <ion-row>
           <ion-col>Total</ion-col>
-          <ion-col size="8"></ion-col>
+          <ion-col size="7"></ion-col>
           
-          <ion-col class="ion-text-end">$0</ion-col>
+          <ion-col class="ion-text-end">${{totalSum + (paymentMethod === 'efectivo' ? 0 : 25)}}</ion-col>
         </ion-row>
       </ion-grid>
       
-
-
+      <ion-button (click)="alerta()" class="ion-padding" [disabled]="!paymentForm.valid && paymentMethod === 'tarjeta'" type="submit" style="color: #817c7c; display: flex; align-items: center; justify-content: center;">
+        <!-- <ion-icon slot="start" name="star"></ion-icon> -->
+        <span style="text-align: center;color: #410d0d; font-family:'Lucida Sans', 'Lucida Sans Regular'; padding-right: 8px;">
+          Pagar
+        </span> 
+      </ion-button>
+      
+ <!-- <ion-button expand="full" type="submit" [disabled]="!paymentForm.valid" style="font-color:black">Aceptar</ion-button> -->
     </ion-card-header>
   </ion-card>
 </ion-content>

@@ -45,6 +45,7 @@ ion-list {
   border-radius: 8px;
   margin-bottom: 8px;
   background-color: #fff;
+  color: #fff;
 }
 
 ion-label {
@@ -126,3 +127,10 @@ hr {
   }
 }
 
+.quantity-modal {
+ height: 350px; /* Ajusta la altura máxima según tus necesidades */
+  width: 100%; /* Ajusta el ancho según tus necesidades */
+  margin: auto; /* Centra el modal horizontalmente */
+  margin-top: calc(100vh - 400px); /* Coloca el modal en la parte inferior de la pantalla */
+
+}

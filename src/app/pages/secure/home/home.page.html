@@ -21,28 +21,26 @@
     </ion-toolbar>
   </ion-header> -->
 
-  
-  <ion-content>
 
 
-    <ion-header>
-      <ion-toolbar>
-        <ion-segment [(ngModel)]="selectedSegment">
-          <ion-segment-button value="all">
-            <ion-label>Menu</ion-label>
-          </ion-segment-button>
-          <ion-segment-button value="favorites">
-            <ion-label>Reservar</ion-label>
-          </ion-segment-button>
-        </ion-segment>
-      </ion-toolbar>
-    </ion-header>
+  <ion-header>
+    <ion-toolbar>
+      <ion-segment [(ngModel)]="selectedSegment">
+        <ion-segment-button value="all">
+          <ion-label>Menu</ion-label>
+        </ion-segment-button>
+        <ion-segment-button (click)="alerta()"value="favorites">
+          <ion-label>Reservar</ion-label>
+        </ion-segment-button>
+      </ion-segment>
+    </ion-toolbar>
+  </ion-header>
 
 
 
     <!-- Show this content when 'All' is selected -->
     <div>
-      <ion-list>
+      <ion-list style="background-color: white;">
         <!-- Your 'All' content goes here -->
         <ion-header>
           <ion-toolbar>
@@ -66,7 +64,7 @@
       </ion-list>
  <!-- Show this content when 'Favorites' is selected -->
  <div *ngIf="tabsMenu === 'Todo'">
-  <ion-list>
+  <ion-list style="background-color: white;">
 
     <!-- Tu contenido de 'Favoritos' va aquí -->
     <ion-item lines="none">
@@ -309,7 +307,7 @@
   <!-- Primera fila con imagen y texto -->
   <ion-row class="image-row">
     <ion-col size="6" class="image-col">
-      <ion-img src="https://perfectdailygrind.com/wp-content/uploads/2020/08/Filter-or-Americano-2.jpg" style="border-radius: 10px;"></ion-img>
+      <ion-img (click)="openQuantityModal('Cafe americano',50)" src="https://perfectdailygrind.com/wp-content/uploads/2020/08/Filter-or-Americano-2.jpg" style="border-radius: 10px;"></ion-img>
       <ion-label class="ion-text-center">
         <ion-text>
           <h3>Café americano</h3>
@@ -340,7 +338,7 @@
   <!-- Primera fila con imagen y texto -->
   <ion-row class="image-row">
     <ion-col size="6" class="image-col">
-      <ion-img src="https://i.pinimg.com/originals/c4/61/2d/c4612db12316f985c61f63abeba6a75b.jpg" style="border-radius: 10px;"></ion-img>
+      <ion-img (click)="openQuantityModal('',50)" src="https://i.pinimg.com/originals/c4/61/2d/c4612db12316f985c61f63abeba6a75b.jpg" style="border-radius: 10px;"></ion-img>
       <ion-label class="ion-text-center">
         <ion-text>
           <h3>Frappuchino</h3>
@@ -434,8 +432,8 @@
 
 
  <!-- Show this content when 'Favorites' is selected -->
- <div *ngIf="tabsMenu === 'Dulce'">
-  <ion-list>
+ <div *ngIf="tabsMenu === 'Dulce'" >
+  <ion-list style="background-color: white;">
 
    
 
@@ -555,7 +553,7 @@
 
  <!-- Show this content when 'Favorites' is selected -->
  <div *ngIf="tabsMenu === 'Salado'">
-  <ion-list>
+  <ion-list style="background-color: white;">
      <!-- Tu contenido de 'Favoritos' va aquí -->
      <ion-item lines="none">
       <ion-label class="ion-text-center" color="pink">
@@ -630,7 +628,7 @@
 
  <!-- Show this content when 'Favorites' is selected -->
  <div *ngIf="tabsMenu === 'Bebidas'">
-  <ion-list>
+  <ion-list style="background-color: white;">
     <!-- Your 'Favorites' content goes here -->
       <!-- Tu contenido de 'Favoritos' va aquí -->
       <ion-item lines="none">
@@ -644,7 +642,7 @@
      <!-- Primera fila con imagen y texto -->
   <ion-row class="image-row">
     <ion-col size="6" class="image-col">
-      <ion-img src="https://perfectdailygrind.com/wp-content/uploads/2020/08/Filter-or-Americano-2.jpg" style="border-radius: 10px;"></ion-img>
+      <ion-img (click)="openQuantityModal('Cafe americano',50)" src="https://perfectdailygrind.com/wp-content/uploads/2020/08/Filter-or-Americano-2.jpg" style="border-radius: 10px;"></ion-img>
       <ion-label class="ion-text-center">
         <ion-text>
           <h3>Café americano</h3>
@@ -675,7 +673,7 @@
   <!-- Primera fila con imagen y texto -->
   <ion-row class="image-row">
     <ion-col size="6" class="image-col">
-      <ion-img src="https://i.pinimg.com/originals/c4/61/2d/c4612db12316f985c61f63abeba6a75b.jpg" style="border-radius: 10px;"></ion-img>
+      <ion-img (click)="openQuantityModal('Frappuchino',70)" src="https://i.pinimg.com/originals/c4/61/2d/c4612db12316f985c61f63abeba6a75b.jpg" style="border-radius: 10px;"></ion-img>
       <ion-label class="ion-text-center">
         <ion-text>
           <h3>Frappuchino</h3>
@@ -720,7 +718,7 @@
      <!-- Segunda fila con imagen y texto -->
 
      <ion-col size="6" class="image-col">
-      <ion-img src="https://cdn7.kiwilimon.com/recetaimagen/3609/640x640/12819.jpg.webp" style="border-radius: 10px;"></ion-img>
+      <ion-img (click)="openQuantityModal('Te helado',65)" src="https://cdn7.kiwilimon.com/recetaimagen/3609/640x640/12819.jpg.webp" style="border-radius: 10px;"></ion-img>
       <ion-label class="ion-text-center">
         <ion-text>
           <h3>Té Helado</h3>
@@ -769,7 +767,7 @@
     </div>
   
     <!-- Show this content when 'Favorites' is selected -->
-    <!-- <ion-content [fullscreen]="true" class="custom-padding"> -->
+
     <div *ngIf="selectedSegment === 'favorites'" >
             <div class="full-screen-reserva">
               <ion-button id="open-modal-table" expand="block" class="mdl">
@@ -778,136 +776,13 @@
             <!-- <ion-img src="../../../../assets/fake.png" class="btn-nn"></ion-img> -->
           </ion-button>
 
-          <!-- <ion-modal #modal trigger="open-modal-table" [presentingElement]="presentingElement" class="custom-modal mdl">
-            <ng-template>
-              <ion-header>
-                <ion-toolbar>
-                  <ion-title>Nutaaaaaa</ion-title>
-                  <ion-buttons slot="end">
-                    <ion-button (click)="modal.dismiss()">Cerrar</ion-button>
-                  </ion-buttons>
-                </ion-toolbar>
-              </ion-header>
-              <ion-content>
-                <ion-card>
-                  <ion-card-header>
-                    <ion-card-title>Card Title</ion-card-title>
-                    <ion-card-subtitle>Card Subtitle</ion-card-subtitle>
-                  </ion-card-header>
-                
-                  <ion-card-content>
-                    Here's a small text description for the card content. Nothing more, nothing less.
-                  </ion-card-content>
-                </ion-card>
-              </ion-content>
-            </ng-template>
-          </ion-modal> -->
             </div>
           
 
     </div>
-  <!-- </ion-content> -->
-  </ion-content>
+
+
   
-  <div class="ion-padding">
 
-    <ion-list-header>
-      <ion-label color="tertiary">Datos personales</ion-label>
-    </ion-list-header>
-
-    <!-- Skeletons -->
-    <ion-list class="item-card-list animate__animated animate__fadeIn" *ngIf="!content_loaded">
-      <ion-item lines="none" color="primary" *ngFor="let i of [].constructor(3);">
-        <ion-avatar slot="start">
-          <ion-skeleton-text animated></ion-skeleton-text>
-        </ion-avatar>
-        <ion-label>
-          <h3><ion-skeleton-text animated style="width: 50%"></ion-skeleton-text></h3>
-          <p><ion-skeleton-text animated style="width: 30%"></ion-skeleton-text></p>
-        </ion-label>
-      </ion-item>
-    </ion-list>
-
-    <ion-list class="item-card-list animate__animated animate__fadeIn" *ngIf="content_loaded" lines="none">
-      <ion-item color="primary" button detail>
-        <ion-label color="medium">
-          <h3>$12,123.99</h3>
-          <p>Deutsche Bank AG</p>
-        </ion-label>
-      </ion-item>
-
-      <ion-item color="primary" button detail>
-        <ion-label color="medium">
-          <h3>$255,000</h3>
-          <p>Bitcoin</p>
-        </ion-label>
-      </ion-item>
-
-      <ion-item color="primary" button detail>
-        <ion-label color="medium">
-          <h3>$1,500.00</h3>
-          <p>PayPal</p>
-        </ion-label>
-      </ion-item>
-    </ion-list>
-
-    <hr>
-
-    <ion-list-header>
-      <ion-label color="tertiary">Datos de contacto</ion-label>
-      <!-- <ion-button color="medium" *ngIf="content_loaded">See All <ion-icon slot="end" name="arrow-forward"></ion-icon>
-      </ion-button> -->
-    </ion-list-header>
-
-    <!-- Skeletons -->
-    <!-- <ion-list class="list-custom animate__animated animate__fadeIn" lines="full" *ngIf="!content_loaded">
-      <ion-item color="primary" *ngFor="let i of [].constructor(3);">
-        <ion-label color="medium">
-          <h3><ion-skeleton-text animated style="width: 50%"></ion-skeleton-text></h3>
-          <p><ion-skeleton-text animated style="width: 70%"></ion-skeleton-text></p>
-        </ion-label>
-        <ion-skeleton-text slot="end" animated style="width: 10%"></ion-skeleton-text>
-      </ion-item>
-    </ion-list>
-
-    <ion-list class="list-custom animate__animated animate__fadeIn" lines="full" *ngIf="content_loaded">
-      <ion-item color="primary" button detail="false">
-        <ion-avatar slot="start" class="ion-avatar-default-icon">
-          <ion-icon color="tertiary" size="large" name="cafe-outline"></ion-icon>
-        </ion-avatar>
-
-        <ion-label>
-          <h3>Coffee</h3>
-          <p>Lorem Ipsum &middot; 09.04.2023</p>
-        </ion-label>
-        <ion-badge color="danger" slot="end">- $7.50</ion-badge>
-      </ion-item>
-
-      <ion-item color="primary" button detail="false">
-        <ion-avatar slot="start" class="ion-avatar-default-icon">
-          <ion-icon color="tertiary" size="large" name="cash-outline"></ion-icon>
-        </ion-avatar>
-
-        <ion-label>
-          <h3>Salary</h3>
-          <p>Lorem Ipsum Inc. &middot; 06.03.2023</p>
-        </ion-label>
-        <ion-badge color="secondary" slot="end">$7500</ion-badge>
-      </ion-item>
-
-      <ion-item color="primary" button detail="false">
-        <ion-avatar slot="start" class="ion-avatar-default-icon">
-          <ion-icon color="tertiary" size="large" name="home-outline"></ion-icon>
-        </ion-avatar>
-
-        <ion-label>
-          <h3>Rent</h3>
-          <p>Lorem Inc. &middot; 03.02.2023</p>
-        </ion-label>
-        <ion-badge color="danger" mode="ios" slot="end">- $1800.00</ion-badge>
-      </ion-item>
-    </ion-list> -->
-
-  </div>
 
 </ion-content>

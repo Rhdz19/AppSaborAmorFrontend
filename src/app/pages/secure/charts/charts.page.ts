@@ -11,7 +11,7 @@ import { ModalController } from '@ionic/angular';
   styleUrls: ['./charts.page.scss'],
 })
 export class ChartsPage implements OnInit {
-
+  presentingElement: string = ''
   @ViewChild(BaseChartDirective) chart: BaseChartDirective | undefined
 
   public bar_chart_option: ChartConfiguration['options'] = {
